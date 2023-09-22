@@ -102,7 +102,7 @@ and the response is
 }
 ```
 
-We can look at the template on how to create new employees
+We can see from the template how to create new employees. Create new employee with
 ```
 $ curl -X POST localhost:8080/employees -H 'Content-type:application/json' -d '{"lastName": "Steve", "firstName": "Jackson", "role": "dev", "salary": 5000}' | json_pp
 ```
