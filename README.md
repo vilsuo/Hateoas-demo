@@ -11,8 +11,7 @@ then we can view all employees with
 $ curl -v localhost:8080/employees | json_pp
 ```
 
-
-Responds with
+and the response is
 ```
 *   Trying 127.0.0.1:8080...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
