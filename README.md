@@ -10,7 +10,6 @@ then we can view all employees with
 ```
 $ curl -v localhost:8080/employees | json_pp
 ```
-
 and the response is
 ```
 *   Trying 127.0.0.1:8080...
@@ -103,13 +102,38 @@ and the response is
 }
 ```
 
+We can look at the template on how to create new employees
+```
+$ curl -X POST localhost:8080/employees -H 'Content-type:application/json' -d '{"lastName": "Steve", "firstName": "Jackson", "role": "dev", "salary": 5000}' | json_pp
+```
+and the response is
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   278    0   202  100    76  36827  13855 --:--:-- --:--:-- --:--:-- 69500
+{
+   "_links" : {
+      "employees" : {
+         "href" : "http://localhost:8080/employees"
+      },
+      "self" : {
+         "href" : "http://localhost:8080/employees/1553"
+      }
+   },
+   "firstName" : "Jackson",
+   "id" : 1553,
+   "lastName" : "Steve",
+   "role" : "dev",
+   "salary" : 5000
+}
+```
+
 We can follow the links to view employees
 ```
 $ curl -v localhost:8080/employees/1 | json_pp
 ```
-and the respond is
+and the response is
 ```
-$ curl -v localhost:8080/employees/1 | json_pp
 *   Trying 127.0.0.1:8080...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -145,4 +169,3 @@ $ curl -v localhost:8080/employees/1 | json_pp
 }
 
 ```
-
